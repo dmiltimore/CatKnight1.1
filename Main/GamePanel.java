@@ -4,17 +4,19 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 
-public class GamePanel extends JPanel{
+public class GamePanel extends JPanel implements Runnable{
 
     //Screeen Settings
-    final private int originalTileSize = 16; //16 x 16 tile
+    final private int originalTileSize = 16;
     final private int scale = 3;
     
-    final private int tileSize = originalTileSize * scale; //48 x 48
+    final private int tileSize = originalTileSize * scale;
     final private int maxScreenCol = 16;
     final private int maxScreenRow = 12;
-    final private int screenWidth = tileSize * maxScreenCol; //768 pixels
-    final private int screenHeight = tileSize * maxScreenRow; // 576 pixels
+    final private int screenWidth = tileSize * maxScreenCol;
+    final private int screenHeight = tileSize * maxScreenRow;
+
+    Thread gameThread;
 
     public GamePanel() {
 
@@ -24,5 +26,38 @@ public class GamePanel extends JPanel{
 
 
     }
+
+    public void startGameThread() {
+
+        gameThread = new Thread(this);
+        gameThread.start();
+
+    }
+
+    public void run() {
+
+        while(gameThread != null){
+
+            // 1 UPDATE: update inormation such as character poisitions 
+            update();
+            // 2 DRAW : draw the screen with the updated information
+            repaint();
+
+        }
+        }
+
+    public void update() {
+
+        }
+    public void paintComponent(Graphics g) {
+        
+        super.paintComponent(g);
+
+        Graphics2D g2 = (Graphics2D)g;
+
+        g2.setColor(Color.white);
+
+        g2.fillRect(100, 100, width, height);
+        }
+    }
     
-}
