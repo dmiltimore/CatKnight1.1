@@ -1,13 +1,7 @@
 package Entity;
-<<<<<<< HEAD
 import Main.GamePanel;
 import Main.KeyHandler;
-=======
 
-import main.GamePanel;
-import main.KeyHandler;
-
->>>>>>> e6ffbfdcc213637fd434e4cef9f5977b945563eb
 public class Player extends Entity {
 
     GamePanel gp;
