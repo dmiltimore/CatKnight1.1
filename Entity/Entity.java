@@ -1,3 +1,4 @@
+package Entity;
 public class Entity {
     private int myX;
     private int myY;
@@ -8,3 +9,12 @@ public class Entity {
     private int MoveSpd;
     
 }
+
+//getters
+public int getX() {
+    return myX;
+}
+public int getY() {
+    return myY;
+}
+public int 
