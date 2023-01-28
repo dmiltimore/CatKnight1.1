@@ -48,7 +48,7 @@ public class Entity {
     public void setSpd(int theSpd) {
         mySpd = theSpd;
     }
-    public void setSpd(int theMoveSpd) {
+    public void setMoveSpd(int theMoveSpd) {
         myMoveSpd = theMoveSpd;
     }
 }
