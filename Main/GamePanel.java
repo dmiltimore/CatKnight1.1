@@ -78,20 +78,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-
-        if(keyH.upPressed == true){
-            playerY -= playerSpeed;
-        }
-        else if(keyH.downPressed == true){
-            playerY += playerSpeed;
-        }
-        else if(keyH.leftPressed == true){
-            playerX -= playerSpeed;
-
-        }
-        else if(keyH.rightPressed == true){
-            playerX += playerSpeed;
-        }
+        player.update();
 
     }
     public void paintComponent(Graphics g) {
@@ -100,8 +87,8 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D)g;
 
-        g2.setColor(Color.white);
-        g2.fillRect(playerX, playerY, tileSize, tileSize);
+        player.draw(g2);
+
         g2.dispose();
     }
 
@@ -109,6 +96,8 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     //getters
-    
+    public int getTileSize() {
+        return tileSize;
+    }
     //setters
 
