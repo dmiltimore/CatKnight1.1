@@ -24,5 +24,7 @@ public class GamePanel extends JPanel{
 
 
     }
+    //getters
     
+    //setters
 }
