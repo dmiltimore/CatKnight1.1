@@ -1,7 +1,7 @@
 package Entity;
 public class Entity {
-    private int myX;
-    private int myY;
+    public int myX;
+    public int myY;
     private int myHP;
     private int myAtk;
     private int myDef;
