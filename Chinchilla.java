@@ -1,3 +1,3 @@
-public class Chinchilla {
+public class Chinchilla extends Boss {
     
 }

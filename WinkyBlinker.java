@@ -1,3 +1,3 @@
-public class WinkyBlinker {
+public class WinkyBlinker extends Boss {
     
 }
