@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-public class GamePanel extends JPanel implements Runnable{
+public class GamePanel extends JPanel implements Runnable {
 
     //Screeen Settings
     final private int originalTileSize = 16;
@@ -61,7 +61,7 @@ public class GamePanel extends JPanel implements Runnable{
             if(delta >= 1) {
                 update();
                 repaint();
-                delta --;
+                delta--;
             }
 
 
