@@ -9,3 +9,12 @@ public class Entity {
     private int MoveSpd;
     
 }
+
+//getters
+public int getX() {
+    return myX;
+}
+public int getY() {
+    return myY;
+}
+public int 

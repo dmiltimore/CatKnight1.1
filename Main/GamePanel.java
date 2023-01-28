@@ -7,14 +7,14 @@ import javax.swing.JPanel;
 public class GamePanel extends JPanel{
 
     //Screeen Settings
-    final int originalTileSize = 16;
-    final int scale = 3;
+    final private int originalTileSize = 16;
+    final private int scale = 3;
     
-    final int tileSize = originalTileSize * scale;
-    final int maxScreenCol = 16;
-    final int maxScreenRow = 12;
-    final int screenWidth = tileSize * maxScreenCol;
-    final int screenHeight = tileSize * maxScreenRow;
+    final private int tileSize = originalTileSize * scale;
+    final private int maxScreenCol = 16;
+    final private int maxScreenRow = 12;
+    final private int screenWidth = tileSize * maxScreenCol;
+    final private int screenHeight = tileSize * maxScreenRow;
 
     public GamePanel() {
 
