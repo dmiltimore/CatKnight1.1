@@ -1,3 +1,6 @@
+import java.io.*;
+import javax.swing.*;
+
 public class GameScreen {
     private int tileSize;
     private int scaleFactor = 3; //to scale sprites so they ain't tiny

@@ -1,3 +1,3 @@
-public class Characters {
+public class Characters extends Entity {
     
 }
