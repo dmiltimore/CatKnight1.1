@@ -3,7 +3,6 @@ package Entity;
 import main.GamePanel;
 import main.KeyHandler;
 
-import Main.GamePanel;
 public class Player extends Entity {
 
     GamePanel gp;
