@@ -26,38 +26,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 
     }
-
-    public void startGameThread() {
-
-        gameThread = new Thread(this);
-        gameThread.start();
-
-    }
-
-    public void run() {
-
-        while(gameThread != null){
-
-            // 1 UPDATE: update inormation such as character poisitions 
-            update();
-            // 2 DRAW : draw the screen with the updated information
-            repaint();
-
-        }
-        }
-
-    public void update() {
-
-        }
-    public void paintComponent(Graphics g) {
-        
-        super.paintComponent(g);
-
-        Graphics2D g2 = (Graphics2D)g;
-
-        g2.setColor(Color.white);
-
-        g2.fillRect(100, 100, width, height);
-        }
-    }
+    //getters
     
+    //setters
+}
