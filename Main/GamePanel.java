@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    Player player = new Player(this, keyH);
+    //Player player = new Player(this, keyH);
 
     //set player's deafault position
     int playerX = 100;
