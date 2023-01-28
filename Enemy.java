@@ -1,3 +1,5 @@
+import Entity.Entity;
+
 public class Enemy extends Entity {  
     // fields
     private int HP;
