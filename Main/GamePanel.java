@@ -3,6 +3,8 @@ package Main;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.Graphcis2D;
 
 public class GamePanel extends JPanel implements Runnable{
 
