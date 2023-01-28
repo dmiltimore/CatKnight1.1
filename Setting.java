@@ -1,11 +1,12 @@
-public class MapGenerator {
-    public static Map generateMap() {
+// sorry guys ignore this class need to fix it
+public class Setting {
+    public static Room generateSetting() {
 
         //generating empty map sections
-        Map Cafe = new Cafe ("You've entered the cafe");
-        Map Town = new Town("You've entered the town");
-        Map Cage = new ChinchillaCafe("You've entered the cage");
-        Map CatHouse = new CatHouse("You've entered the Cat House");
+        Room Cafe = new Room("You've entered the cafe");
+        Room Town = new Room("You've entered the town");
+        Room Cage = new Room("You've entered the cage");
+        Room CatHouse = new Room("You've entered the Cat House");
         
         //generating door entrances
         Door Entrance_Cafe = new Door(Entrance, Cafe);

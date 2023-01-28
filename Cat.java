@@ -4,6 +4,8 @@ public class Cat extends Characters {
     // setters and getters
     private String name;
     private int power;
+    private int HP;
+    private int MAX_HP = 100;
 
 
     public void setName(String n) {
