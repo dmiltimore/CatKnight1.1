@@ -21,17 +21,17 @@ public class Player extends Entity {
     }
     public void update() {
         if(keyH.upPressed == true){
-            myY -= super.getMoveSpd();
+            myY -= getMoveSpd();
         }
         else if(keyH.downPressed == true){
-            myY += super.getMoveSpd();
+            myY += getMoveSpd();
         }
         else if(keyH.leftPressed == true){
-            myX -= super.getMoveSpd();
+            myX -= getMoveSpd();
 
         }
         else if(keyH.rightPressed == true){
-            myX += super.getMoveSpd();
+            myX += getMoveSpd();
     }
     public void draw(Graphics2D g2) {
         g2.setColor(Color.white);
