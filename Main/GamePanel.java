@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import Entity.Player;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -22,7 +23,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    //Player player = new Player(this, keyH);
+    Player player = new Player(this, keyH);
 
     //set player's deafault position
     int playerX = 100;
