@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 public class GamePanel extends JPanel{
 
     //Screeen Settings
-    final  int originalTileSize = 16;
+    final int originalTileSize = 16;
     final int scale = 3;
     
     final int tileSize = originalTileSize * scale;
