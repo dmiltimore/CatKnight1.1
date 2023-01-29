@@ -1,5 +1,5 @@
 package Main;
-
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Main {
@@ -9,6 +9,8 @@ public class Main {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setTitle("Cat Knight"); 
+        ImageIcon image = new ImageIcon("New Piskel.png");
+        window.setIconImage(image.getImage());
 
         GamePanel gamePanel = new GamePanel();
         window.add(gamePanel);

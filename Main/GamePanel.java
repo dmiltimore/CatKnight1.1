@@ -92,12 +92,14 @@ public class GamePanel extends JPanel implements Runnable {
         g2.dispose();
     }
 
-}
-
-
-    //getters
-    public int getTileSize() {
+     //getters
+     public int getTileSize() {
         return tileSize;
     }
     //setters
+
+}
+
+
+
 

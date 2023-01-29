@@ -13,11 +13,13 @@ public class Player extends Entity {
     public Player(GamePanel gp, KeyHandler keyH){
         this.gp = gp;
         this.keyH = keyH;
+
+        setDefaultValues();
     }
     public void setDefaultValues() {
         myX = 100;
         myY = 100;
-        super.setMoveSpd(4);
+        setMoveSpd(4);
     }
     public void update() {
         if(keyH.upPressed == true){
@@ -33,9 +35,11 @@ public class Player extends Entity {
         else if(keyH.rightPressed == true){
             myX += getMoveSpd();
     }
+    
+    }
+
     public void draw(Graphics2D g2) {
         g2.setColor(Color.white);
         g2.fillRect(myX, myY, gp.getTileSize(), gp.getTileSize());
     }
-}
 }
