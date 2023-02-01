@@ -1,4 +1,5 @@
 package Entity;
+
 import Main.GamePanel;
 import Main.KeyHandler;
 import java.awt.Graphics;

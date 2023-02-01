@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import Entity.Player;
+import Tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -21,13 +22,11 @@ public class GamePanel extends JPanel implements Runnable {
 
     int FPS = 60;
 
+    TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     Player player = new Player(this, keyH);
     //set player's deafault position
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
 
     public GamePanel() {
 
@@ -87,7 +86,9 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D)g;
 
-        player.draw(g2);
+       // tileM.draw(g2); //draws tiles first
+
+        player.draw(g2); //draws player second layer
 
         g2.dispose();
     }
