@@ -6,8 +6,8 @@ public class Enemy extends Entity {
     private int damage;
 
     
-    private static DEFAULT_HP;
-    private static DEFULT_DAMAGE;
+    private static int DEFAULT_HP;
+    private static int DEFULT_DAMAGE;
 
     public Enemy() {
         this(Enemy.DEFULT_DAMAGE, Enemy.DEFAULT_HP);

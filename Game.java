@@ -1,6 +1,8 @@
 
 public class Game {
     private boolean gameOver;
+    private final Player PLAYER;
+    
 
     public void quitGame() {
         this.gameOver = true;
