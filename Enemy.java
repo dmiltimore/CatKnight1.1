@@ -18,6 +18,7 @@ public class Enemy extends Entity {
         this.damage = damage;
     }
 
+    // allows enemey to attack and returns the taken damage
     public int attack () {
         if (this.HP > 0) {
             return this.damage;
@@ -26,6 +27,7 @@ public class Enemy extends Entity {
         }
     }
 
+    // returns enemy damage based on atack
     public int attacked(int damage) {
         this.HP -= damage;
         return this.HP;
