@@ -12,7 +12,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //Screeen Settings
     final private int originalTileSize = 16;
-    final private int scale = 3;
+    final private int scale = 4;
     
     final public int tileSize = originalTileSize * scale;
     final private int maxScreenCol = 16;
@@ -86,7 +86,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D)g;
 
-       // tileM.draw(g2); //draws tiles first
+        tileM.draw(g2); //draws tiles first
 
         player.draw(g2); //draws player second layer
 
