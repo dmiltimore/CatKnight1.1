@@ -1,8 +1,8 @@
 public class WinkyBlinker extends Enemy {
    
     // sets damage and HP
-    private static int DEFAULT_HP = 15;
-    private static int DEFULT_DAMAGE = 30;
+    private static int DEFAULT_HP_WINKY = 15;
+    private static int DEFULT_DAMAGE_WINKY = 30;
 
     // calls super
     public WinkyBlinker(int HP, int damage) {
@@ -11,7 +11,7 @@ public class WinkyBlinker extends Enemy {
 
     // specifies HP and damage for WinkyBlinker
     public WinkyBlinker() {
-        this(WinkyBlinker.DEFAULT_HP_WBHP, WinkyBlinker.DEFULT_DAMAGE_WBD);
+        this(WinkyBlinker.DEFAULT_HP_WINKY, WinkyBlinker.DEFULT_DAMAGE_WINKY);
     }
 
     public String toString() {
