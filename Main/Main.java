@@ -10,7 +10,8 @@ public class Main {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setTitle("Cat Knight"); 
-        ImageIcon image = new ImageIcon("New Piskel.png");
+
+        ImageIcon image = new ImageIcon("Stronglady.png");
         window.setIconImage(image.getImage());
 
         GamePanel gamePanel = new GamePanel();
