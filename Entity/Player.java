@@ -14,8 +14,15 @@ public class Player extends Entity {
     GamePanel gp;
     KeyHandler keyH;
 
+    public BufferedImage image = null;
     public final int screenX;
     public final int screenY;
+
+    //interactions
+    public boolean canInteract = false;
+    // checking to see if object or NPC
+    public int whoInteract = -1;
+    public int targetInfex = -1; 
 
     public Player(GamePanel gp, KeyHandler keyH){
         this.gp = gp;
@@ -32,6 +39,15 @@ public class Player extends Entity {
         myY = 100;
         setMoveSpd(4);
         direction = "down";
+
+        //name
+        name = "";
+
+        //status
+        maxHealth = 10;
+        currentHealth = maxHealth;
+        alive = true;
+
     }
     public void getPlayerImage() {
         try {

@@ -1,6 +1,15 @@
 package Entity;
 import java.awt.image.BufferedImage;
+
+import Main.GamePanel;
+import Main.KeyHandler;
 public class Entity {
+
+    GamePanel gp;
+    KeyHandler keyH;
+    
+    public String name = "";
+
     public int myX;
     public int myY;
     private int myHP;
@@ -14,6 +23,16 @@ public class Entity {
 
     public int spriteCounter = 0;
     public int spriteNum = 1;
+
+    // character status
+
+    public int maxHealth;
+    public int currentHealth;
+    public boolean alive = true;
+
+    public Entity(GamePanel gp) {
+        this.gp = gp;
+    }
     //getters
     public int getX() {
         return myX;

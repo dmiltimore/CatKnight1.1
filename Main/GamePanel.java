@@ -20,6 +20,11 @@ public class GamePanel extends JPanel implements Runnable {
     final private int screenWidth = tileSize * maxScreenCol;
     final private int screenHeight = tileSize * maxScreenRow;
 
+    //game state (paused, play, etc)
+    public int gameState;
+    public final int playState = 1;
+    public final int pausedState = 2;
+
     int FPS = 60;
 
     TileManager tileM = new TileManager(this);
@@ -38,6 +43,10 @@ public class GamePanel extends JPanel implements Runnable {
 
 
 
+    }
+
+    public void setUpGame() {
+        gameState = playState;
     }
 
     public void startGameThread() {
@@ -77,7 +86,12 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        player.update();
+        if(gameState == playState) {
+            player.update();
+        }
+        if(gameState == pausedState) {
+            //nothing
+        }
 
     }
     public void paintComponent(Graphics g) {

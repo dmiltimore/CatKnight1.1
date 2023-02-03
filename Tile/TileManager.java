@@ -13,14 +13,17 @@ import javax.imageio.ImageIO;
 public class TileManager {
 
     GamePanel gp;
-    Tile[] tile;
+    public Tile[] tile;
+    public int mapTileNum[][];
+    public int[] mapArray;
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
-
-        tile = new Tile[10];
+        tile = new Tile[100];
+        mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
+
     }
     public void getTileImage() {
         try {
