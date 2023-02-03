@@ -8,7 +8,7 @@ public class Main {
         // displays and starts game
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
+        window.setResizable(true); // allows fullscreen and screen sizing
         window.setTitle("Cat Knight"); 
 
         ImageIcon image = new ImageIcon("Stronglady.png");

@@ -37,32 +37,23 @@ public class TileManager {
         }
     }
     public void draw(Graphics2D g2) {
-            for (int i = 0; i < 30; i++) {
-                for (int j = 0; j < 22; j++) {
-                    int row = i * 34;
-                    int col = j * 34;
-                    //bricks
-                    if (j == 0 || j == 21) {
-                        g2.drawImage(tile[2].image, row, col, gp.tileSize, gp.tileSize, null);
-                    }
-                    if (i == 0 || i == 29) {
-                        g2.drawImage(tile[2].image, row, col, gp.tileSize, gp.tileSize, null);
-                    }
+        
+        int row = 0;
+        int col = 0;
+        int x = 0;
+        int y = 0;
 
-                    //grass
-                    if (i > 0 && i < 29 && j < 21 && j > 0) {
-                        g2.drawImage(tile[0].image, row, col, gp.tileSize, gp.tileSize, null);
-                    }
+        while (col < gp.maxScreenCol && row < gp.maxScreenRow) {
+            g2.drawImage(tile[0].image, x, y, gp.tileSize, gp.tileSize, null);
+            col++;
+            x += gp.tileSize;
 
-                    //water
-                    if (i > 10 && i < 20 && j > 8 && j < 14) {
-                        g2.drawImage(tile[1].image, row, col, gp.tileSize, gp.tileSize, null);
-                    }
-                }
+            if(col == gp.maxScreenCol) {
+                col = 0;
+                x = 0;
+                row++;
+                y += gp.tileSize;
             }
-        
-        
-
-        
+        }
      }
 }
