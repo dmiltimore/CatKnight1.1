@@ -11,19 +11,14 @@ import Tile.TileManager;
 public class GamePanel extends JPanel implements Runnable {
 
     //Screeen Settings
-    final private int originalTileSize = 16;
-    final private int scale = 4;
+    final int originalTileSize = 16;
+    final int scale = 3;
     
-    final public int tileSize = originalTileSize * scale;
-    final public int maxScreenCol = 16;
-    final public int maxScreenRow = 12;
-    final private int screenWidth = tileSize * maxScreenCol;
-    final private int screenHeight = tileSize * maxScreenRow;
-
-    //game state (paused, play, etc)
-    public int gameState;
-    public final int playState = 1;
-    public final int pausedState = 2;
+    public final int tileSize = originalTileSize * scale;
+    public final int maxScreenCol = 16;
+    public final int maxScreenRow = 12;
+    public final int screenWidth = tileSize * maxScreenCol;
+    public final int screenHeight = tileSize * maxScreenRow;
 
     int FPS = 60;
 
@@ -31,7 +26,11 @@ public class GamePanel extends JPanel implements Runnable {
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     Player player = new Player(this, keyH);
-    //set player's deafault position
+ 
+    // players position default
+    int playerX = 100;
+    int playerY = 100; 
+    int playerSpeed = 4;
 
     public GamePanel() {
 
@@ -43,10 +42,6 @@ public class GamePanel extends JPanel implements Runnable {
 
 
 
-    }
-
-    public void setUpGame() {
-        gameState = playState;
     }
 
     public void startGameThread() {
@@ -86,24 +81,17 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        if(gameState == playState) {
-            player.update();
-        }
-        if(gameState == pausedState) {
-            //nothing
-        }
-
+        player.update();
     }
+
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-
-        tileM.draw(g2); //draws tiles first
-
+        tileM.draw(g2);
         player.draw(g2); //draws player second layer
-
+        
         g2.dispose();
     }
 

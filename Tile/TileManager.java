@@ -14,13 +14,12 @@ public class TileManager {
 
     GamePanel gp;
     public Tile[] tile;
-    public int mapTileNum[][];
-    public int[] mapArray;
+    int mapTileNum[][];
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
         tile = new Tile[100];
-        mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
+        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
 
@@ -39,6 +38,7 @@ public class TileManager {
             e.printStackTrace();
         }
     }
+   
     public void draw(Graphics2D g2) {
         
         int row = 0;
