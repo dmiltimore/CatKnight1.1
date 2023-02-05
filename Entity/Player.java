@@ -35,8 +35,8 @@ public class Player extends Entity {
         try {
             up1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatWalking.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatWalking1.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             left1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             left2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             right1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
