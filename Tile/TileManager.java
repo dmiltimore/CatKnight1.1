@@ -89,13 +89,13 @@ public class TileManager {
 
             int worldX = worldCol * gp.getTileSize();
             int worldY = worldRow * gp.getTileSize();
-            int screenX = worldX - gp.player.x + gp.player.screenX;
-            int screenY = worldY - gp.player.y + gp.player.screenY; // camera error my be due to wrong x
+            int screenX = worldX - gp.player.worldX + gp.player.screenX;
+            int screenY = worldY - gp.player.worldY + gp.player.screenY; // camera error my be due to wrong x
             
-            if(worldX + gp.getTileSize() > gp.player.x - gp.player.screenX &&
-               worldX - gp.getTileSize() < gp.player.x + gp.player.screenX &&
-               worldY + gp.getTileSize() > gp.player.y - gp.player.screenY &&
-               worldY - gp.getTileSize() < gp.player.y + gp.player.screenY){
+            if(worldX + gp.getTileSize() > gp.player.worldX - gp.player.screenX &&
+               worldX - gp.getTileSize() < gp.player.worldX + gp.player.screenX &&
+               worldY + gp.getTileSize() > gp.player.worldY - gp.player.screenY &&
+               worldY - gp.getTileSize() < gp.player.worldY + gp.player.screenY){
 
                     g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
 

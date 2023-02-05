@@ -31,8 +31,8 @@ public class Player extends Entity {
         getPlayerImage();
     }
     public void setDefaultValues() {
-        x = 100;
-        y = 100;
+        worldX = 100;
+        worldY = 100;
         setMoveSpd(4);
         direction = "down";
 
@@ -59,16 +59,16 @@ public class Player extends Entity {
             
             if(keyH.upPressed == true){
                 direction = "up";
-                y -= getMoveSpd();
+                worldY -= getMoveSpd();
             } else if(keyH.downPressed == true){
                 direction = "down";
-               y += getMoveSpd();
+               worldY += getMoveSpd();
             } else if(keyH.leftPressed == true){
                 direction = "left";
-                x -= getMoveSpd();
+                worldX -= getMoveSpd();
             } else if(keyH.rightPressed == true){
                 direction = "right";
-                x += getMoveSpd();
+                worldX += getMoveSpd();
             } 
             
             spriteCounter++;

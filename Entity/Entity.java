@@ -10,7 +10,8 @@ public class Entity {
     
     public String name = "";
 
-    public int x, y;
+    public int worldX;
+    public int worldY;
   
     private int myDef;
     private int mySpd;
@@ -27,10 +28,10 @@ public class Entity {
     }
     //getters
     public int getX() {
-        return x;
+        return worldX;
     }
     public int getY() {
-        return y;
+        return worldY;
     }
 
     public int getDef() {
@@ -44,10 +45,10 @@ public class Entity {
     }
     //setters
     public void setX(int theX) {
-        x = theX;
+        worldX = theX;
     }
     public void setY(int theY) {
-        y = theY;
+        worldY = theY;
     }
 
     public void setDef(int theDef) {
