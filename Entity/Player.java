@@ -14,12 +14,19 @@ public class Player extends Entity {
     GamePanel gp;
     KeyHandler keyH;
 
+    public final int screenX;
+    public final int screenY;
+
     public BufferedImage image = null;
 
     public Player(GamePanel gp, KeyHandler keyH){
         super(gp);
         this.gp = gp;
         this.keyH = keyH;
+
+        screenX = gp.getScreenWidth()/2 - (gp.tileSize/2);
+        screenY = gp.getScreenHeight()/2 - (gp.tileSize/2);
+
         setDefaultValues();
         getPlayerImage();
     }
@@ -115,6 +122,6 @@ public class Player extends Entity {
                 image = right2;
             }
         }
-        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }
 }
