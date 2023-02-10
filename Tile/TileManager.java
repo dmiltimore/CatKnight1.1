@@ -22,7 +22,7 @@ public class TileManager {
     public TileManager(GamePanel gp) {
         this.gp = gp;
         tile = new Tile[100];
-        mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
+        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
         loadMap("/Assets/Maps/StageOne.txt");
@@ -40,7 +40,7 @@ public class TileManager {
             tile[2].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/tree.png"));
 
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(getClass().getResource("/Assets/Tiles/dirt.png"));
+            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/dirt.png"));
         } catch(IOException e) {
             e.printStackTrace();
         }
@@ -55,17 +55,17 @@ public class TileManager {
             
             int col = 0;
             int row = 0;
-            while(col < gp.maxWorldCol && row < gp.maxWorldRow) {
+            while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
                 String line = br.readLine();
 
-                while(col < gp.maxWorldCol){
+                while(col < gp.maxScreenCol){
                     String numbers[] = line.split(" ");
 
                     int num = Integer.parseInt(numbers[col]);
                     mapTileNum[col][row] = num;
                     col++;
                 }
-                if(col == gp.maxWorldCol){
+                if(col == gp.maxScreenCol){
                     col = 0;
                     row++;
                 }
@@ -79,34 +79,23 @@ public class TileManager {
     
     public void draw(Graphics2D g2) {
         
-        int worldRow = 0;
-        int worldCol = 0;
+        int row = 0;
+        int col = 0;
+        int x = 0;
+        int y = 0;
 
+        while (col < gp.maxScreenCol && row < gp.maxScreenRow) {
+            int tileNum = mapTileNum[col][row];
 
+            g2.drawImage(tile[tileNum].image, x, y, gp.tileSize, gp.tileSize, null);
+            col++;
+            x += gp.tileSize;
 
-        while (worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
-            int tileNum = mapTileNum[worldCol][worldRow];
-
-            int worldX = worldCol * gp.getTileSize();
-            int worldY = worldRow * gp.getTileSize();
-            int screenX = worldX - gp.player.worldX + gp.player.screenX;
-            int screenY = worldY - gp.player.worldY + gp.player.screenY; // camera error my be due to wrong x
-            
-            if(worldX + gp.getTileSize() > gp.player.worldX - gp.player.screenX &&
-               worldX - gp.getTileSize() < gp.player.worldX + gp.player.screenX &&
-               worldY + gp.getTileSize() > gp.player.worldY - gp.player.screenY &&
-               worldY - gp.getTileSize() < gp.player.worldY + gp.player.screenY){
-
-                    g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
-
-                }
-           
-            worldCol++;
-
-            if(worldCol == gp.maxWorldCol) {
-                worldCol = 0;
-                worldRow++;
-
+            if(col == gp.maxScreenCol) {
+                col = 0;
+                x = 0;
+                row++;
+                y += gp.tileSize;
             }
         }
      }

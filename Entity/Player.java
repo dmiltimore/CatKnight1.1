@@ -42,8 +42,8 @@ public class Player extends Entity {
         try {
             up1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatWalking.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatWalking1.png"));
             left1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             left2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             right1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
@@ -100,6 +100,7 @@ public class Player extends Entity {
             if(spriteNum == 2) {
                 image = up2;
             }
+            break;
         case "down":
             if(spriteNum == 1) {
             image = down1;
@@ -107,6 +108,7 @@ public class Player extends Entity {
             if(spriteNum == 2) {
                 image = down2;
             }
+            break;
         case "left":
             if(spriteNum == 1) {
                 image = left1;
@@ -114,6 +116,7 @@ public class Player extends Entity {
             if(spriteNum == 2) {
                 image = left2;
             }
+            break;
         case "right":
             if(spriteNum == 1) {
                 image = right1;
@@ -121,6 +124,7 @@ public class Player extends Entity {
             if(spriteNum == 2) {
                 image = right2;
             }
+            break;
         }
         g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }
