@@ -25,7 +25,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/Assets/Maps/StageTown.txt"); // Path to Map
+        loadMap("/Assets/Maps/maps/StageTown.txt"); // Path to Map
 
     }
     public void getTileImage() {
