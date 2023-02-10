@@ -40,6 +40,7 @@ public class Player extends Entity {
 
     public void getPlayerImage() {
         try {
+<<<<<<< HEAD
             up1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             down1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatWalking.png"));
@@ -48,6 +49,16 @@ public class Player extends Entity {
             left2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             right1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
             right2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCat.png"));
+=======
+            up1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatUp.png"));
+            up2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatUp1.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatDown.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatDown1.png"));
+            left1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatLeft.png"));
+            left2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatLeft2.png"));
+            right1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatRight.png"));
+            right2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatRight2.png"));
+>>>>>>> 3d7c80503ae1ae876ce4633c7577277d93910f5d
         } catch(IOException e) {
             e.printStackTrace();
         } 
