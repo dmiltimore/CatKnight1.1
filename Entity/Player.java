@@ -31,8 +31,8 @@ public class Player extends Entity {
         getPlayerImage();
     }
     public void setDefaultValues() {
-        worldX = 100;
-        worldY = 100;
+        worldX = gp.tileSize * 23;
+        worldY = gp.tileSize * 21;
         setMoveSpd(4);
         direction = "down";
 
@@ -49,7 +49,6 @@ public class Player extends Entity {
             left2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatLeft2.png"));
             right1 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatRight.png"));
             right2 = ImageIO.read(getClass().getResourceAsStream("/Assets/Character_Models/player/TabbyCatRight2.png"));
-
         } catch(IOException e) {
             e.printStackTrace();
         } 
@@ -89,8 +88,7 @@ public class Player extends Entity {
     }
 
     public void draw(Graphics2D g2) {
-        // g2.setColor(Color.white);
-        // g2.fillRect(myX, myY, gp.getTileSize(), gp.getTileSize());
+    
 
         BufferedImage image = null;
 
