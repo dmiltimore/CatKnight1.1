@@ -25,7 +25,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
-        loadMap("/Assets/Maps/StageOne.txt"); // Path to Map
+        loadMap("/Assets/Maps/StageTown.txt"); // Path to Map
 
     }
     public void getTileImage() {
@@ -45,7 +45,11 @@ public class TileManager {
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(getClass().getResource("/Assets/Tiles/sand.png"));
 
-            
+            tile[5] = new Tile();
+            tile[5].image = ImageIO.read(getClass().getResource("/Assets/Tiles/brick.png"));
+
+            tile[6] = new Tile();
+            tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
 
         } catch(IOException e) {
             e.printStackTrace();
