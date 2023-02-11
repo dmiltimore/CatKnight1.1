@@ -1,5 +1,6 @@
 package Entity;
 import java.awt.image.BufferedImage;
+import java.awt.Rectangle;
 
 import Main.GamePanel;
 import Main.KeyHandler;
@@ -8,7 +9,6 @@ public class Entity {
     GamePanel gp;
     KeyHandler keyH;
     
-    public String name = "";
 
     public int worldX, worldY;
   
@@ -20,6 +20,8 @@ public class Entity {
     public String direction;
     public int spriteCounter = 0;
     public int spriteNum = 1;
+    public Rectangle solidArea;
+    public boolean collisionOn = false;
 
 
     public Entity(GamePanel gp) {

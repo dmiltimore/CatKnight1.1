@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Player extends Entity {
 
@@ -26,6 +27,13 @@ public class Player extends Entity {
 
         screenX = gp.getScreenWidth()/2 - (gp.tileSize/2);
         screenY = gp.getScreenHeight()/2 - (gp.tileSize/2);
+
+        solidArea = new Rectangle();
+        solidArea.x = 8;
+        solidArea.y = 8;
+        solidArea.width = 16;
+        solidArea.height = 16;
+
 
         setDefaultValues();
         getPlayerImage();
@@ -60,17 +68,27 @@ public class Player extends Entity {
             
             if(keyH.upPressed == true){
                 direction = "up";
-                worldY -= getMoveSpd();
             } else if(keyH.downPressed == true){
                 direction = "down";
-               worldY += getMoveSpd();
             } else if(keyH.leftPressed == true){
                 direction = "left";
-                worldX -= getMoveSpd();
             } else if(keyH.rightPressed == true){
                 direction = "right";
-                worldX += getMoveSpd();
             } 
+
+            // check tile collision 
+            collisionOn = false;
+            gp.cChecker.checkTile(this);
+
+            // if collision is false player can move
+            if(collisionOn == false) {
+                switch(direction) {
+                    case "up": worldY -= getMoveSpd(); break;
+                    case "down": worldY += getMoveSpd(); break;
+                    case "left":  worldX -= getMoveSpd(); break;
+                    case "right": worldX += getMoveSpd(); break;
+                }
+            }
             
             spriteCounter++;
             if(spriteCounter > 10) {
