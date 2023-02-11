@@ -10,8 +10,7 @@ public class Entity {
     
     public String name = "";
 
-    public int worldX;
-    public int worldY;
+    public int worldX, worldY;
   
     private int myDef;
     private int mySpd;

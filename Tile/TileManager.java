@@ -25,7 +25,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/Assets/Maps/maps/StageTown.txt"); // Path to Map
+        loadMap("/Assets/Maps/world01.txt"); // Path to Map
 
     }
     public void getTileImage() {
@@ -34,22 +34,22 @@ public class TileManager {
             tile[0].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/grass.png")); //adds grass image to tile array
             
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/water.png"));
+            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/wall.png"));
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/tree.png"));
+            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/water.png"));
 
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/dirt.png"));
+            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/earth.png"));
 
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(getClass().getResource("/Assets/Tiles/sand.png"));
+            tile[4].image = ImageIO.read(getClass().getResource("/Assets/Tiles/tree.png"));
 
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(getClass().getResource("/Assets/Tiles/brick.png"));
+            tile[5].image = ImageIO.read(getClass().getResource("/Assets/Tiles/sand.png"));
 
-            tile[6] = new Tile();
-            tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
+            //tile[6] = new Tile();
+            //tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
 
 
         } catch(IOException e) {
@@ -90,12 +90,13 @@ public class TileManager {
     
     public void draw(Graphics2D g2) {
         
-        int worldRow = 0;
         int worldCol = 0;
+        int worldRow = 0;
 
 
 
         while (worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
+            
             int tileNum = mapTileNum[worldCol][worldRow];
 
             int worldX = worldCol * gp.getTileSize();
@@ -103,22 +104,30 @@ public class TileManager {
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
             int screenY = worldY - gp.player.worldY + gp.player.screenY; // camera error my be due to wrong x
             
-            if(worldX + gp.getTileSize() > gp.player.worldX - gp.player.screenX &&
-               worldX - gp.getTileSize() < gp.player.worldX + gp.player.screenX &&
-               worldY + gp.getTileSize() > gp.player.worldY - gp.player.screenY &&
-               worldY - gp.getTileSize() < gp.player.worldY + gp.player.screenY){
-
-                    g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
-
-                }
-           
+            g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
             worldCol++;
 
             if(worldCol == gp.maxWorldCol) {
                 worldCol = 0;
                 worldRow++;
-
             }
+
+            // if(worldX + gp.getTileSize() > gp.player.worldX - gp.player.screenX &&
+            //    worldX - gp.getTileSize() < gp.player.worldX + gp.player.screenX &&
+            //    worldY + gp.getTileSize() > gp.player.worldY - gp.player.screenY &&
+            //    worldY - gp.getTileSize() < gp.player.worldY + gp.player.screenY){
+
+            //         g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+
+            //     }
+           
+            //worldCol++;
+
+            // if(worldCol == gp.maxWorldCol) {
+            //     worldCol = 0;
+            //     worldRow++;
+
+            // }
         }
      }
 }

@@ -17,7 +17,7 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
 
-    public BufferedImage image = null;
+    //public BufferedImage image = null;
 
     public Player(GamePanel gp, KeyHandler keyH){
         super(gp);
