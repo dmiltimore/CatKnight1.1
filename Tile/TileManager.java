@@ -51,7 +51,6 @@ public class TileManager {
             //tile[6] = new Tile();
             //tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
 
-
         } catch(IOException e) {
             e.printStackTrace();
         }
