@@ -8,7 +8,7 @@ public class Main {
         // displays and starts game
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(true); // allows fullscreen and screen sizing
+        window.setResizable(false); // allows fullscreen and screen sizing
         window.setTitle("Cat Knight"); 
 
         ImageIcon image = new ImageIcon("Stronglady.png");
@@ -16,11 +16,13 @@ public class Main {
 
         GamePanel gamePanel = new GamePanel();
         window.add(gamePanel);
+        
         window.pack();
 
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         
+        gamePanel.setupGame();
         gamePanel.startGameThread();
     }
 }

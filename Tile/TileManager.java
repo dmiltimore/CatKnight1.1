@@ -21,7 +21,7 @@ public class TileManager {
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
-        tile = new Tile[100];
+        tile = new Tile[50];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
@@ -107,30 +107,23 @@ public class TileManager {
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
             int screenY = worldY - gp.player.worldY + gp.player.screenY; // camera error my be due to wrong x
             
-            g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+
+            if(worldX + gp.getTileSize() > gp.player.worldX - gp.player.screenX &&
+               worldX - gp.getTileSize() < gp.player.worldX + gp.player.screenX &&
+               worldY + gp.getTileSize() > gp.player.worldY - gp.player.screenY &&
+               worldY - gp.getTileSize() < gp.player.worldY + gp.player.screenY){
+
+                    g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+
+                }
+           
             worldCol++;
 
             if(worldCol == gp.maxWorldCol) {
                 worldCol = 0;
                 worldRow++;
+
             }
-
-            // if(worldX + gp.getTileSize() > gp.player.worldX - gp.player.screenX &&
-            //    worldX - gp.getTileSize() < gp.player.worldX + gp.player.screenX &&
-            //    worldY + gp.getTileSize() > gp.player.worldY - gp.player.screenY &&
-            //    worldY - gp.getTileSize() < gp.player.worldY + gp.player.screenY){
-
-            //         g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
-
-            //     }
-           
-            //worldCol++;
-
-            // if(worldCol == gp.maxWorldCol) {
-            //     worldCol = 0;
-            //     worldRow++;
-
-            // }
         }
      }
 }
