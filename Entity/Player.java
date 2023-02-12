@@ -29,8 +29,8 @@ public class Player extends Entity {
         screenY = gp.getScreenHeight()/2 - (gp.tileSize/2);
 
         solidArea = new Rectangle();
-        solidArea.x = 8;
-        solidArea.y = 8;
+        solidArea.x = 10;
+        solidArea.y = 10;
         solidArea.width = 16;
         solidArea.height = 16;
 
