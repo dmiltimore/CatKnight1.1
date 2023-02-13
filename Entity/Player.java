@@ -17,6 +17,7 @@ public class Player extends Entity {
 
     public final int screenX;
     public final int screenY;
+    int hasKey = 0;
 
     //public BufferedImage image = null;
 
@@ -31,6 +32,8 @@ public class Player extends Entity {
         solidArea = new Rectangle();
         solidArea.x = 10;
         solidArea.y = 10;
+        solidAreaDefaultX = solidArea.x;
+        solidaAreaDefaultY = solidArea.y;
         solidArea.width = 16;
         solidArea.height = 16;
 
@@ -80,6 +83,9 @@ public class Player extends Entity {
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            int objectIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objectIndex);
+
             // if collision is false player can move
             if(collisionOn == false) {
                 switch(direction) {
@@ -103,6 +109,28 @@ public class Player extends Entity {
  
         }
         
+    }
+    public void pickUpObject(int i) {
+        if(i != 999) {
+            String objectName = gp.object[i].name;
+            switch(objectName) {
+                case "Potion":
+                    hasKey++;
+                    gp.object[i] = null;
+                    System.out.println("Key: " + hasKey);
+                    break;
+                case "Lantern":
+                    hasKey++;
+                    gp.object[i] = null;
+                    System.out.println("Lantern: " + hasKey);
+                    break;
+                case "Coin":
+                    hasKey++;
+                    gp.object[i] = null;
+                    System.out.println("Lantern: " + hasKey);
+                    break;
+            }
+        }
     }
 
     public void draw(Graphics2D g2) {

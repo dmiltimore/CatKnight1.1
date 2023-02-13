@@ -12,5 +12,6 @@ public class ObjectCoin extends SuperObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
     }
 }
