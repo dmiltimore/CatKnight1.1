@@ -63,7 +63,7 @@ public class Player extends Entity {
                 worldY -= getMoveSpd();
             } else if(keyH.downPressed == true){
                 direction = "down";
-               worldY += getMoveSpd();
+                worldY += getMoveSpd();
             } else if(keyH.leftPressed == true){
                 direction = "left";
                 worldX -= getMoveSpd();
