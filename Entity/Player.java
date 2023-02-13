@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Player extends Entity {
 
@@ -16,8 +17,9 @@ public class Player extends Entity {
 
     public final int screenX;
     public final int screenY;
+    int hasKey = 0;
 
-    public BufferedImage image = null;
+    //public BufferedImage image = null;
 
     public Player(GamePanel gp, KeyHandler keyH){
         super(gp);
@@ -26,6 +28,15 @@ public class Player extends Entity {
 
         screenX = gp.getScreenWidth()/2 - (gp.tileSize/2);
         screenY = gp.getScreenHeight()/2 - (gp.tileSize/2);
+
+        solidArea = new Rectangle();
+        solidArea.x = 10;
+        solidArea.y = 10;
+        solidAreaDefaultX = solidArea.x;
+        solidaAreaDefaultY = solidArea.y;
+        solidArea.width = 16;
+        solidArea.height = 16;
+
 
         setDefaultValues();
         getPlayerImage();
@@ -60,17 +71,30 @@ public class Player extends Entity {
             
             if(keyH.upPressed == true){
                 direction = "up";
-                worldY -= getMoveSpd();
             } else if(keyH.downPressed == true){
                 direction = "down";
-                worldY += getMoveSpd();
             } else if(keyH.leftPressed == true){
                 direction = "left";
-                worldX -= getMoveSpd();
             } else if(keyH.rightPressed == true){
                 direction = "right";
-                worldX += getMoveSpd();
             } 
+
+            // check tile collision 
+            collisionOn = false;
+            gp.cChecker.checkTile(this);
+
+            int objectIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objectIndex);
+
+            // if collision is false player can move
+            if(collisionOn == false) {
+                switch(direction) {
+                    case "up": worldY -= getMoveSpd(); break;
+                    case "down": worldY += getMoveSpd(); break;
+                    case "left":  worldX -= getMoveSpd(); break;
+                    case "right": worldX += getMoveSpd(); break;
+                }
+            }
             
             spriteCounter++;
             if(spriteCounter > 10) {
@@ -85,6 +109,28 @@ public class Player extends Entity {
  
         }
         
+    }
+    public void pickUpObject(int i) {
+        if(i != 999) {
+            String objectName = gp.object[i].name;
+            switch(objectName) {
+                case "Potion":
+                    hasKey++;
+                    gp.object[i] = null;
+                    System.out.println("Key: " + hasKey);
+                    break;
+                case "Lantern":
+                    hasKey++;
+                    gp.object[i] = null;
+                    System.out.println("Lantern: " + hasKey);
+                    break;
+                case "Coin":
+                    hasKey++;
+                    gp.object[i] = null;
+                    System.out.println("Lantern: " + hasKey);
+                    break;
+            }
+        }
     }
 
     public void draw(Graphics2D g2) {
