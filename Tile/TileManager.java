@@ -52,6 +52,15 @@ public class TileManager {
             tile[5] = new Tile();
             tile[5].image = ImageIO.read(getClass().getResource("/Assets/Tiles/dirt.png"));
 
+            tile[6] = new Tile();
+            tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeRoots.png"));
+
+            tile[7] = new Tile();
+            tile[7].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeTrunk.png"));
+
+            tile[8] = new Tile();
+            tile[8].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeTop.png"));
+
             //tile[6] = new Tile();
             //tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
 
