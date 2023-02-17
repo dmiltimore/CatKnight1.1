@@ -12,7 +12,8 @@ import javax.imageio.ImageIO;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
-d
+
+public class TileManager {
 
     GamePanel gp;
     public Tile[] tile;
