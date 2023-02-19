@@ -25,7 +25,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/Assets/Maps/world01.txt"); // Path to Map
+        loadMap("/Assets/Maps/maps/TestTwo.txt"); // Path to Map
 
     }
     public void getTileImage() {
@@ -48,18 +48,21 @@ public class TileManager {
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(getClass().getResource("/Assets/Tiles/tree.png"));
             tile[4].collision = true;
-
+            
             tile[5] = new Tile();
             tile[5].image = ImageIO.read(getClass().getResource("/Assets/Tiles/earth.png"));
 
             tile[6] = new Tile();
-            tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeRoots.png"));
+            tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeBottom.png"));
+            tile[6].collision = true;
 
             tile[7] = new Tile();
-            tile[7].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeTrunk.png"));
+            tile[7].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeTop.png"));
+            tile[7].collision = true;
 
             tile[8] = new Tile();
-            tile[8].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeTop.png"));
+            tile[8].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeCombined.png"));
+            tile[8].collision = true;
 
             //tile[6] = new Tile();
             //tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
