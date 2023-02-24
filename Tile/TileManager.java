@@ -64,7 +64,6 @@ public class TileManager {
             tile[8].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeCombined.png"));
             tile[8].collision = true;
 
-
             tile[9] = new Tile();
             tile[9].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeFloor.png"));
 
