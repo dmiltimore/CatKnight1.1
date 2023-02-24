@@ -12,6 +12,7 @@ public class Sound {
     
     public Sound() {
         soundURL[0] = getClass().getResource("/Assets/Sounds/bossabass.wav");
+        soundURL[1] = getClass().getResource("/Assets/Sounds/bossabossa.wav");
     }
 
     public void setFile(int i) {
