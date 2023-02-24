@@ -30,13 +30,19 @@ public class GamePanel extends JPanel implements Runnable {
     int FPS = 60;
 
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
+    KeyHandler keyH = new KeyHandler(this);
     Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssestSetter aSetter = new AssestSetter(this);
     public Player player = new Player(this, keyH);
     public SuperObject object[] = new SuperObject[10];
-    
+    public UI ui = new UI(this);
+
+
+    public int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
+
     // players position default
     // int playerX = 100;
     // int playerY = 100; 
@@ -60,6 +66,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
+        gameState = playState;
     }
 
     public void run() {
@@ -94,13 +101,22 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        player.update();
+        if(gameState == playState) {
+            player.update();
+        }
+        if(gameState == pauseState) {
+
+        }
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
 
+        long drawStart = 0;
+        if(keyH.checkDrawTime == true) {
+            drawStart = System.nanoTime();
+        }
         // tile
         tileM.draw(g2);
 
