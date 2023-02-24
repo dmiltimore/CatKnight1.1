@@ -64,11 +64,40 @@ public class TileManager {
             tile[8].image = ImageIO.read(getClass().getResource("/Assets/Tiles/treeCombined.png"));
             tile[8].collision = true;
 
-            //tile[6] = new Tile();
-            //tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
 
             tile[9] = new Tile();
             tile[9].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeFloor.png"));
+
+            tile[10] = new Tile();
+            tile[10].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeTablePlain.png"));
+            tile[10].collision = true;
+
+            tile[11] = new Tile();
+            tile[11].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeWall.png"));
+            tile[11].collision = true;
+
+            tile[12] = new Tile();
+            tile[12].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeWindow.png"));
+            tile[12].collision = true;
+
+            tile[13] = new Tile();
+            tile[13].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CatsRule.png"));
+            tile[13].collision = true;
+
+            tile[14] = new Tile();
+            tile[14].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeCeiling.png"));
+            tile[14].collision = true;
+
+            tile[15] = new Tile();
+            tile[15].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafePaws.png"));
+            tile[15].collision = true;
+
+            tile[16] = new Tile();
+            tile[16].image = ImageIO.read(getClass().getResource("/Assets/Tiles/Carpet.png"));
+
+            tile[17] = new Tile();
+            tile[17].image = ImageIO.read(getClass().getResource("/Assets/Tiles/Void.png"));
+            tile[17].collision = true;
 
         } catch(IOException e) {
             e.printStackTrace();
