@@ -70,6 +70,10 @@ public class TileManager {
             tile[9] = new Tile();
             tile[9].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeFloor.png"));
 
+            tile[10] = new Tile();
+            tile[10].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeTablePlain.png"));
+            tile[10].collision = true;
+
         } catch(IOException e) {
             e.printStackTrace();
         }
