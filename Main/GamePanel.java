@@ -29,8 +29,9 @@ public class GamePanel extends JPanel implements Runnable {
 
     //SYSTEM
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
-    Sound sound = new Sound();
+    KeyHandler keyH = new KeyHandler(this);
+    Sound music = new Sound();
+    Sound se = new Sound();
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssestSetter aSetter = new AssestSetter(this);
     Thread gameThread;
@@ -40,7 +41,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     public Player player = new Player(this, keyH);
     public SuperObject object[] = new SuperObject[10];
-    
+    public UI ui = new UI(this);
+
+
+    public int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
+
     // players position default
     // int playerX = 100;
     // int playerY = 100; 
@@ -59,12 +66,13 @@ public class GamePanel extends JPanel implements Runnable {
     }
     public void setupGame() {
         aSetter.setObject();
-        playMusic(1); //plays cafe song
+        playMusic(0); //plays cafe song
     }
 
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
+        gameState = playState;
     }
 
     public void run() {
@@ -99,13 +107,22 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        player.update();
+        if(gameState == playState) {
+            player.update();
+        }
+        if(gameState == pauseState) {
+
+        }
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
 
+        long drawStart = 0;
+        if(keyH.checkDrawTime == true) {
+            drawStart = System.nanoTime();
+        }
         // tile
         tileM.draw(g2);
 
@@ -118,21 +135,23 @@ public class GamePanel extends JPanel implements Runnable {
 
         // player
         player.draw(g2); //draws player second layer
+
+        ui.draw(g2);
         
         g2.dispose();
     }
 
     public void playMusic(int i) {
-        sound.setFile(i);
-        sound.play();
-        sound.loop();
+        music.setFile(i);
+        music.play();
+        music.loop();
     }
     public void stopMusic() {
-        sound.stop();
+        music.stop();
     }
     public void playSE(int i) {
-        sound.setFile(i);
-        sound.play();
+        se.setFile(i);
+        se.play();
     }
 
      //getters

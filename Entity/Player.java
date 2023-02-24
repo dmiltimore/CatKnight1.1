@@ -14,12 +14,8 @@ public class Player extends Entity {
 
     GamePanel gp;
     KeyHandler keyH;
-
     public final int screenX;
     public final int screenY;
-    int hasKey = 0;
-
-    //public BufferedImage image = null;
 
     public Player(GamePanel gp, KeyHandler keyH){
         super(gp);
@@ -44,6 +40,7 @@ public class Player extends Entity {
     public void setDefaultValues() {
         worldX = gp.tileSize * (gp.maxWorldCol / 2);
         worldY = gp.tileSize * (gp.maxWorldRow / 2);
+
         setMoveSpd(4);
         direction = "down";
 
@@ -112,24 +109,7 @@ public class Player extends Entity {
     }
     public void pickUpObject(int i) {
         if(i != 999) {
-            String objectName = gp.object[i].name;
-            switch(objectName) {
-                case "Potion":
-                    hasKey++;
-                    gp.object[i] = null;
-                    System.out.println("Key: " + hasKey);
-                    break;
-                case "Lantern":
-                    hasKey++;
-                    gp.object[i] = null;
-                    System.out.println("Lantern: " + hasKey);
-                    break;
-                case "Coin":
-                    hasKey++;
-                    gp.object[i] = null;
-                    System.out.println("Lantern: " + hasKey);
-                    break;
-            }
+    
         }
     }
 
