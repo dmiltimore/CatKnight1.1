@@ -25,7 +25,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/Assets/Maps/maps/TestTwo.txt"); // Path to Map
+        loadMap("/Assets/Maps/Cafe.txt"); // Path to Map
 
     }
     public void getTileImage() {
@@ -41,9 +41,9 @@ public class TileManager {
             tile[2].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/water.png"));
             tile[2].collision = true;
 
-            // tile[3] = new Tile();
-            // tile[3].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/earth.png"));
-            // tile[3].collision = true;
+            tile[3] = new Tile();
+            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/Assets/Tiles/earth.png"));
+            tile[3].collision = true;
 
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(getClass().getResource("/Assets/Tiles/tree.png"));
@@ -66,6 +66,9 @@ public class TileManager {
 
             //tile[6] = new Tile();
             //tile[6].image = ImageIO.read(getClass().getResource("/Assets/Tiles/cliff.png"));
+
+            tile[9] = new Tile();
+            tile[9].image = ImageIO.read(getClass().getResource("/Assets/Tiles/CafeFloor.png"));
 
         } catch(IOException e) {
             e.printStackTrace();
