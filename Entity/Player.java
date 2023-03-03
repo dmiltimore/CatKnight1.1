@@ -39,7 +39,7 @@ public class Player extends Entity {
     }
     public void setDefaultValues() {
         worldX = gp.tileSize * (gp.maxWorldCol / 8);
-        worldY = gp.tileSize * (gp.maxWorldRow / 8);
+        worldY = gp.tileSize * (gp.maxWorldRow / 8 + 2);
 
         setMoveSpd(4);
         direction = "down";
