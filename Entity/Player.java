@@ -38,8 +38,8 @@ public class Player extends Entity {
         getPlayerImage();
     }
     public void setDefaultValues() {
-        worldX = gp.tileSize * (gp.maxWorldCol / 2);
-        worldY = gp.tileSize * (gp.maxWorldRow / 2);
+        worldX = gp.tileSize * (gp.maxWorldCol / 8);
+        worldY = gp.tileSize * (gp.maxWorldRow / 8);
 
         setMoveSpd(4);
         direction = "down";
